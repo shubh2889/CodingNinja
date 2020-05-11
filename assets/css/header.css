@@ -1,7 +1,8 @@
 header{
     width: 100%;
     height: 75px;
+    font-size: 2rem;
     text-align: center;
-    color: white;
-    background-image: linear-gradient(135deg, #667eea,#764ba2);
+    color: black;
+   /* background-image: linear-gradient(135deg, #667eea,#764ba2); */
 }
