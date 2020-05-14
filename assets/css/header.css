@@ -23,6 +23,7 @@ header {
     margin-right: 25px;
     margin-top: 5px; }
     header .header-links ul {
+      padding: 0;
       height: 100%;
       width: 100%;
       display: inline-flex;
