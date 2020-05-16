@@ -1,38 +1,76 @@
-header {
+/* header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+    background-color: #3b5998;
+
+   .header-heading{
+       display: flex;
+       align-items: center;
+       margin-left: 20px;
+       h1{
+           color: white;
+           font-size: 2rem;
+           cursor: pointer;
+        }
+    }
+    .header-links{
+        display: flex;
+        align-items: center;
+        width: 35%;
+        height: 40px;
+        margin-top: 5px;
+
+        ul{ 
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: inline-flex;
+            justify-content: space-around;
+            li{ 
+                text-align: start;
+                width: 45%;
+                list-style: none;
+                a{  
+                    width: 100%;
+                    height: 27px;
+                    text-decoration: none;
+                    color: rgba(255, 255, 255, 0.85);
+                    font-size: 1.5rem;
+                }
+                a:hover{
+                    color:white ;
+                }
+            }
+        }
+    }
+} */
+#layout-header nav {
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  height: 50px;
-  font-size: 2rem;
-  text-align: center;
-  color: black;
-  background-color: #3b5998; }
-  header .header-heading {
-    display: flex;
-    align-items: center;
-    margin-left: 20px; }
-    header .header-heading h1 {
+  align-items: center;
+  padding: 0 10px;
+  background: #3b5998;
+  color: white;
+  box-shadow: 1px 1px 1px 1px lightgrey; }
+  #layout-header nav .mini-logo p {
+    margin: 5px;
+    font-size: 1.9rem;
+    font-weight: bold; }
+    #layout-header nav .mini-logo p a {
       color: white;
-      font-size: 2rem;
-      cursor: pointer; }
-  header .header-links {
+      text-decoration: none; }
+  #layout-header nav .auth-links ul {
+    margin: 4% 5px;
     display: flex;
-    align-items: center;
-    width: 250px;
-    height: 40px;
-    margin-right: 25px;
-    margin-top: 5px; }
-    header .header-links ul {
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      display: inline-flex;
-      justify-content: space-around; }
-      header .header-links ul li {
-        list-style: none; }
-        header .header-links ul li a {
-          text-decoration: none;
-          color: rgba(255, 255, 255, 0.85);
-          font-size: 1.5rem; }
-        header .header-links ul li a:hover {
-          color: white; }
+    list-style: none; }
+    #layout-header nav .auth-links ul li {
+      margin-right: 40px; }
+      #layout-header nav .auth-links ul li a {
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none; }

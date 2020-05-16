@@ -1,14 +1,30 @@
 <link rel="stylesheet" href="/css/user_profile.css">
-        <h1>
-            Codial/Profile Page
-        </h1>
        
-        <p>
-            Name: <%= user.name %>
-        </p>
-        <p>
-            Email: <%= user.email %>
-        </p>
-        <p>
-            password: <%= user.password %>
-        </p>
+        <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100px" height="100px">
+
+        <% if(user.id == profile_user.id) {%>
+            <p>
+                Name: <%= profile_user.name %>
+            </p>
+            <p>
+                Email: <%= profile_user.email %>
+            </p>
+            <br>
+            <br>
+            <!-- if user matches then show the form -->
+            <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="POST">
+                <input type="text" name="name" placeholder="your name" value="<%= profile_user.name %>" required>
+                <input type="email" name="email" placeholder="your name" value="<%= profile_user.email %>" required>
+                <input type="file" name="avatar" placeholder="profile">
+                <input type="submit" value="Update" >
+            </form>
+            
+        <%} else{%>
+            <!-- else shoe only the profile info -->
+            <p>
+                Name: <%= profile_user.name %>
+            </p>
+            <p>
+                Email: <%= profile_user.email %>
+            </p>
+        <%}%>

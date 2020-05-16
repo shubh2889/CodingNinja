@@ -1,55 +1,39 @@
 <link rel="stylesheet" href="/css/home.css">
 
-<h1>
-    <%= title%>
-</h1
 
-<section id="feed-posts">
-    <h4>Posts</h4>
-    <% if(locals.user) { %>
-    <form action="/posts/create" id="new-post-form" method="POST">
-        <textarea name="content" id="new-post-content" cols="30" rows="3" placeholder="type here..." required></textarea>
-        <input type="submit" value="Post">
-    </form>
-    <% } %>
 
-    <div id="posts-list-container">
-        <ul>
-            <% for (post of posts) {%>
-                <li>
-                    <p>
-                        <%= post.content %>
-                        <br>
-                        <small>
-                            <%= post.user.name %>
-                        </small>
-                    </p>
-                    <div id="post-comments">
-                        <% if(locals.user) {%>
-                            <form action="/comments/create" method="POST">
-                                <input type="text" name="content" placeholder="Type here to add comment..." required>
-                                <input type="hidden" name="post" value="<%= post._id %>">
-                                <input type="submit" value="Add Comment">
-                            </form>
-                        <% } %>   
+<div id="home-container">
+    <section id="container-1"></section>
+    <section id="feed-posts">
+        <% if(locals.user) { %>
+            <div class="post">
+                <form action="/posts/create" id="new-post-form" method="POST">
+                    <textarea name="content" id="new-post-content" cols="30" rows="1" placeholder="What's on your mind, <%= user.name %>?" required></textarea>
+                    <button type="submit">
+                        <i class="fa fa-user-o" aria-hidden="true"></i>
+                        Post
+                    </button>
+                </form>
+            </div>
+        <% } %>
 
-                        <div class="post-comments-list">
-                            <ul id="post-comment-<%= post._id %>">
-                                <% for (comment of post.comments) {%>
-                                    <li>
-                                        <p>
-                                            <%= comment.content %> <br>
-                                            <small>
-                                                <%= comment.user.name %>
-                                            </small>
-                                        </p>
-                                    </li>
-                                <% } %>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-            <% } %>    
-        </ul>
-    </div>
-</section>
+        <div id="posts-list-container">
+            <ul>
+                <% for (post of posts) {%>
+                <%- include('_posts') -%>
+                <% } %>    
+            </ul>
+        </div>
+    </section>
+
+    <section id="user-friends">
+        <h2>Friends</h2>
+        <% for(u of all_users) {%>
+            <p>
+                <a href="/users/profile/<%= u.id %>"><%= u.name %></a>
+            </p>
+        <% } %>   
+    </section>
+</div>
+
+<script src="/js/home_posts.js"></script>
