@@ -1,23 +1,27 @@
-body{
-    font-family: sans-serif;
+*{
+    margin: 0;
+    padding: 0;
 }
 
 main{
+    height: 89.5vh !important;
     display: flex;
     justify-content: space-around;
+   
 }
 
 .box{
     width: 400px;
     padding: 40px;
     margin: auto;
+    background-color: white;
     border-radius: 50px;
-    background-color: #191919;
+    box-shadow: 0px 0px 40px 1px rgba(0,0,0,0.75);
     text-align: center;
 }
 
 .box h1{
-    color: white;
+    color: black;
     padding-bottom: 10px;
     font-weight: 500;
 }
@@ -26,14 +30,14 @@ main{
     border: none;
     outline: none;
     width: 250px;
-    color: white;
+    color: black;
     background: none;
     display: block;
     margin: 10px auto;
     padding: 14px 10px;
     text-align: center;
     border-radius: 25px;
-    border: 2px solid #3498db;
+    border: 2px solid #3b5998;
     transition: .25s;
 }
 
@@ -45,18 +49,34 @@ main{
 .box button[type= "submit"]{
     border: none;
     outline: none;
-    color: white;
+    color: gray;
     background: none;
     display: block;
     margin: 10px auto;
     padding: 14px 40px;
     text-align: center;
     border-radius: 25px;
-    border: 2px solid #2ecc71;
+    border: 2px solid #3b5998;
     transition: .25s;
     cursor: pointer;
 }
 
 .box button[type= "submit"]:hover{
-    background-color: #2ecc71;
+    color: white;
+    background-color: #3b5998;
+}
+
+form p {
+    color: rgba(0, 0, 0, 0.788);
+    font-size: .9rem;
+    text-align: start;
+    padding: 0 0 0 20%;
+}
+
+form p a{
+    text-decoration: none;
+    color: rgb(0, 204, 255);
+    &:hover{
+        text-decoration: underline;
+    }
 }

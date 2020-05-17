@@ -1,8 +1,9 @@
 <link rel="stylesheet" href="/css/user_profile.css">
        
-        <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100px" height="100px">
+        <!-- <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="100px" height="100px"> -->
 
         <% if(user.id == profile_user.id) {%>
+            <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>" width="150px" height="150px" style="border-radius: 50%; object-fit: fill;">
             <p>
                 Name: <%= profile_user.name %>
             </p>
@@ -20,7 +21,8 @@
             </form>
             
         <%} else{%>
-            <!-- else shoe only the profile info -->
+            <!-- else show only the profile info -->
+            <img src="<%= profile_user.avatar %>" alt="<%= profile_user.name %>"width="150px" height="150px" style="border-radius: 50%; object-fit: fill;">
             <p>
                 Name: <%= profile_user.name %>
             </p>
