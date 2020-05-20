@@ -21,6 +21,9 @@ const userSchema = new mongoose.Schema({
     avatar: {
         type: String
     }
+    // cover: {
+    //     type: String
+    // }
 }, {
     timestamps: true
 });
@@ -28,21 +31,12 @@ const userSchema = new mongoose.Schema({
 
 let storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, '..', AVATAR_PATH));
+    cb(null, path.join(__dirname, '..', AVATAR_PATH));
     },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now())
     }
 });
-
-// let coverStorage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//       cb(null, path.join(__dirname, '..', COVER_PATH));
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, file.fieldname + '-' + Date.now())
-//     }
-// });
 
 // static methods
 userSchema.statics.uploadedAvatar = multer({storage: storage}).single('avatar');
