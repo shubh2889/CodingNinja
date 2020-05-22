@@ -75,3 +75,9 @@ form p a {
   color: #00ccff; }
   form p a:hover {
     text-decoration: underline; }
+
+.google-signin {
+  color: rgba(0, 0, 0, 0.788);
+  font-size: 1rem;
+  text-align: start;
+  padding: 5px 0 0 70%; }
