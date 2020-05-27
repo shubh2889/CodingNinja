@@ -3,7 +3,7 @@ const Post = require('../model/post');
 const commentsMailer = require('../mailer/comments_mailer');
 const queue = require('../config/kue');
 const commentEmailWorker = require('../worker/comment_email_worker');
-// const Like = require('../model/likes');
+const Like = require('../model/likes');
 
 module.exports.create = async function(req, res){
     try{
@@ -34,7 +34,6 @@ module.exports.create = async function(req, res){
                 });
             }
 
-            // req.flash('success', 'comment added');
             return res.redirect('/');     
         }
     }catch(err){
@@ -52,12 +51,13 @@ module.exports.destroy = async function(req,res){
 
             let postId = comment.post;
 
+            // CHANGE :: destroy the associated likes for this comment
+            await Like.deleteMany({likeable: comment._id, onModel: 'Comment'});
+
             comment.remove();
             
             let post = await Post.findByIdAndUpdate(postId, {$pull: {comments: req.params.id}});
 
-            // CHANGE :: destroy the associated likes for this comment
-            // await Like.deleteMany({likeable: comment._id, onModel: 'Comment'});
 
             // send the comment id which was deleted back to the views
             if (req.xhr){
@@ -65,10 +65,10 @@ module.exports.destroy = async function(req,res){
                     data: {
                         comment_id: req.params.id
                     },
-                    message: "Post deleted"
+                    message: "Comment deleted"
                 });
             }
-            // req.flash('info', 'comment deleted');
+
             return res.redirect('back');
         }else{
             return res.redirect('back');

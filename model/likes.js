@@ -7,7 +7,7 @@ const likeShema = new mongoose.Schema({
     // this defines the objectid of the liked object
     likeable: {
         type: mongoose.Schema.ObjectId,
-        required: true,
+        require: true,
         refPath: 'onModel'
     },
     // this foeld is used for the defining the type of the liked object since this is a dynamic reference

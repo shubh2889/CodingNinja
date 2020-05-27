@@ -1,6 +1,6 @@
 const Post = require('../model/post');
 const Comment = require('../model/comment');
-// const Like = require('../model/likes');
+const Like = require('../model/likes');
 
 module.exports.create = async function(req, res){
     try{
@@ -21,7 +21,6 @@ module.exports.create = async function(req, res){
             })
         }
 
-        // req.flash('success', 'Post created');
         return res.redirect('back');
     }catch(err){
         console.log('error in creating post', err);
@@ -40,8 +39,8 @@ module.exports.destroy = async function(req, res){
         if(post.user == req.user.id){
             
             // CHANGE :: delete the associated likes for the post and all its comments' likes too
-            // await Like.deleteMany({likeable: post, onModel: 'Post'});
-            // await Like.deleteMany({_id: {$in: post.comments}});
+            await Like.deleteMany({likeable: post, onModel: 'Post'});
+            await Like.deleteMany({_id: {$in: post.comments}});
             
             post.remove();
             
