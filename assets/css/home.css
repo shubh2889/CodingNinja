@@ -69,6 +69,8 @@ body {
           font-size: 1.2rem;
           color: grey;
           padding: 5px auto; }
+        #home-container #feed-posts .post #new-post-form button:focus {
+          border: none; }
         #home-container #feed-posts .post #new-post-form button:hover {
           background-color: rgba(196, 196, 196, 0.151);
           cursor: pointer;
@@ -86,6 +88,8 @@ body {
           #home-container #feed-posts #posts-list-container ul li .post-list {
             margin: 5px;
             border: 1px solid black; }
+          #home-container #feed-posts #posts-list-container ul li input[type=text]:focus {
+            outline: none; }
   #home-container #user-friends {
     width: 22%;
     height: auto;

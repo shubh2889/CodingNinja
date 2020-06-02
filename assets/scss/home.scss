@@ -81,6 +81,7 @@ body{
                     color: grey;
                     padding: 5px auto;
                 }
+                button:focus{border: none;}
                 button:hover{
                     background-color: rgba(196, 196, 196, 0.151);
                     cursor: pointer;
@@ -103,6 +104,10 @@ body{
                     .post-list{
                         margin: 5px;
                         border: 1px solid black;
+                        
+                    }
+                    input[type=text]:focus{
+                        outline: none;
                     }
                 }
             }
