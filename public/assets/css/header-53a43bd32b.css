@@ -1,0 +1,25 @@
+#layout-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background: #3b5998;
+  color: white;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5); }
+  #layout-header nav .mini-logo p {
+    margin: 5px;
+    font-size: 1.9rem;
+    font-weight: bold; }
+    #layout-header nav .mini-logo p a {
+      color: white;
+      text-decoration: none; }
+  #layout-header nav .auth-links ul {
+    margin: 4% 5px;
+    display: flex;
+    list-style: none; }
+    #layout-header nav .auth-links ul li {
+      margin-right: 40px; }
+      #layout-header nav .auth-links ul li a {
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none; }

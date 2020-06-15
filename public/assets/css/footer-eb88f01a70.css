@@ -1,0 +1,18 @@
+#layout-footer {
+  color: white;
+  height: 25px;
+  background: grey;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  #layout-footer a {
+    color: white;
+    text-decoration: none; }
+  #layout-footer .footer-nav {
+    float: right; }
+    #layout-footer .footer-nav ul {
+      display: flex;
+      list-style: none; }
+      #layout-footer .footer-nav ul li {
+        margin: auto 10px; }
