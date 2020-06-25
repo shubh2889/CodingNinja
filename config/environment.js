@@ -24,12 +24,12 @@ const development = {
         port: 587,
         secure: false,
         auth: {
-            user: 'shubhamcdn5@gmail.com',
-            pass: 'Qwerty3246'
+            user: process.env.CODEIAL_GMAIL_USERNAME,
+            pass: process.env.CODEIAL_GMAIL_PASSWORD
         }
     },
-    google_client_id: '358653701882-om5a75ck60brdaba55aaebgc46o4o6r9.apps.googleusercontent.com',
-    google_client_secret: 'dYLtUB3ASb85EYXh_VQtH5xr',
+    google_client_id: process.env.CODEIAL_GOOGLE_CLIENT_ID,
+    google_client_secret: process.env.CODEIAL_GOOGLE_CLIENT_SECRET,
     google_call_back_url: 'http://localhost:8000/users/auth/google/callback',
     jwt_secret : 'codeial',
     morgan: {
